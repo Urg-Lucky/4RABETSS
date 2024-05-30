@@ -1,0 +1,76 @@
+<div class="min-wrapper">
+  <app-profile-sidebar></app-profile-sidebar>
+  <div class="content-wrapper">
+    <div class="page-title d-lg-flex d-none">
+      <h3 class="d-flex mb-0 align-items-center gap-2">
+        <span class="material-symbols-outlined fs-2"> swap_vert </span>
+        Profit and Loss
+      </h3>
+    </div>
+    <div class="group-slots pt-4">
+      <form action="" class="filter-form g-3 row mb-3">
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="input-group">
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="input-group">
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="input-group">
+            <select class="form-select form-control" aria-label="Default select example" id="vecType">
+              <option value="0 ">All</option>
+              <option value="4">Cricket</option>
+              <option value="2">Tennis</option>
+              <option value="1">Soccer</option>
+              <option value="9994">Diamond Casino</option>
+              <option value="9999">Casino</option>
+              <option value="2224">Matka</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 btn-box">
+          <button type="submit" class="btn btn-primary">Load Report</button>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th width="160px">Stack</th>
+              <th width="150px">Profit/Loss</th>
+              <th width="150px">Commission</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-nowrap">
+                <span>No Record Found </span>
+                <!-- <span class="d-block">Gujarat Titans v Chennai Super
+                  Kings</span> -->
+                <!-- <span class="d-block">May 10, 2024, 07:30 PM</span> -->
+              </td>
+              <td></td>
+              <td>
+                <span class="text-danger fw-bold d-block"></span>
+              </td>
+              <td></td>
+            </tr>
+
+            <!-- if data is not -->
+            <!-- <tr class="data-not-found">
+                <td colspan="4" class="text-center">Not Found</td>
+              </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <app-rightaside></app-rightaside>
+</div>

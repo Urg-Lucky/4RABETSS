@@ -1,0 +1,12 @@
+.slots .slots__item img {
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #1c2d44;
+}
+
+@media (max-width: 550px) {
+  .slots .slots__item img {
+    height: auto;
+  }
+}

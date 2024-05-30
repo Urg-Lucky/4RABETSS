@@ -1,0 +1,11 @@
+<main
+  class="wrapper"
+  [ngClass]="{ loggedIn: this.value != '' && this.loginvalue != null }"
+>
+  <app-bottom-nav></app-bottom-nav>
+  <app-header></app-header>
+  <app-signup></app-signup>
+  <app-signin></app-signin>
+  <app-change-password></app-change-password>
+  <router-outlet></router-outlet>
+</main>

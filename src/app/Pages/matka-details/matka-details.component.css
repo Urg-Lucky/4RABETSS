@@ -1,0 +1,54 @@
+.nav-pills {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-item {
+  margin-right: 25px;
+}
+
+.nav-link {
+  background: none;
+  color: #fff;
+  opacity: 0.5;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 10px 10px;
+}
+.nav-link.active {
+  background: none;
+  opacity: 1;
+  border-color: #0989ff;
+}
+.nav-link span {
+  display: block;
+  font-size: 11px;
+}
+.m-row {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+.m-col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+label {
+  font-size: 14px;
+}
+.form-control {
+  height: 38px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: var(--color-form) !important;
+  box-shadow: none !important;
+  border-color: var(--color-form) !important;
+  color: #fff;
+  font-size: 13px !important;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+p {
+  font-size: 14px;
+}

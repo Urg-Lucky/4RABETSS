@@ -1,0 +1,576 @@
+<div class="casino-page">
+  <div class="min-wrapper">
+    <div class="d-lg-block d-none">
+      <app-casino-leftaside></app-casino-leftaside>
+    </div>
+    <div class="content-wrapper">
+      <div class="page-title d-lg-flex d-none">
+        <h3 class="d-flex mb-0 align-items-center gap-2">
+          <span class="material-symbols-outlined fs-2"> poker_chip </span>
+          Casino
+        </h3>
+      </div>
+      <app-casino-slider></app-casino-slider>
+      <div class="d-lg-none d-block">
+        <app-casino-leftaside></app-casino-leftaside>
+      </div>
+      <div class="group-slots">
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Roulette</a>
+            </div>
+            <a class="show-all" (click)="getgamesall('roulette')">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of Imagescasin">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="[
+                      '/casino-page',
+                      {
+                        game_id: item.game_id,
+                        provider_name: item.provider_name
+                      }
+                    ]"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Lighting </a>
+            </div>
+            <a (click)="getgamesall('lightning')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of Lighting">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Live-Casino </a>
+            </div>
+            <a (click)="getgamesall('live-casino')" class="show-all"
+              >Show All</a
+            >
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of LIveCasino">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Teen-Patti</a>
+            </div>
+            <a (click)="getgamesall('teen-patti')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of teenpati">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Andar-Bahar</a>
+            </div>
+            <a (click)="getgamesall('andar-bahar')" class="show-all"
+              >Show All</a
+            >
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of andarbhar">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                    <p class="case__name mb-0">{{ item.game_name }}</p>
+                  </a>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Dragon-Tiger</a>
+            </div>
+            <a (click)="getgamesall('dragon-tiger')" class="show-all"
+              >Show All</a
+            >
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of dargrongames">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Baccarat</a>
+            </div>
+            <a (click)="getgamesall('baccarat')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of barccat">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Blackjack</a>
+            </div>
+            <a (click)="getgamesall('blackjack')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of blackjack">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Table-Games</a>
+            </div>
+            <a (click)="getgamesall('table-games')" class="show-all"
+              >Show All</a
+            >
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of tablegames">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Poker</a>
+            </div>
+            <a (click)="getgamesall('poker')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of pokergames">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+
+        <div>
+          <div class="slots__header">
+            <div class="slots__left">
+              <a routerLink="/casino" class="slots__title">Holdem</a>
+            </div>
+            <a (click)="getgamesall('holdem')" class="show-all">Show All</a>
+          </div>
+
+          <div class="slots">
+            <swiper-container
+              slides-per-view="4.2"
+              breakpoints='{
+                "992": {
+                  "slidesPerView": 4.2
+                },
+                "768": {
+                  "slidesPerView": 3
+                },
+                "0": {
+                  "slidesPerView": 2.1
+                }
+            }'
+            >
+              <swiper-slide *ngFor="let item of holdems">
+                <div class="slots__item">
+                  <a
+                    [routerLink]="['/casino-page']"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <div class="case">
+                      <img [src]="item.Image" alt="" />
+                      <div class="case__container">
+                        <button type="button" class="case-btn">Play</button>
+                      </div>
+                    </div>
+                  </a>
+                  <p class="case__name mb-0">{{ item.game_name }}</p>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+    <app-rightaside></app-rightaside>
+  </div>
+</div>

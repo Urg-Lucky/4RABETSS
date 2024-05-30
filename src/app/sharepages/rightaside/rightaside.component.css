@@ -1,0 +1,40 @@
+.l-rightbar {
+  display: block;
+  width: 76px;
+  position: fixed;
+  top: 58px;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+  background-color: var(--color-accent-second_90_to-light);
+  border-left: 1px solid var(--color-secondary_to-dark);
+}
+.l-rightbar__container {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.l-rightbar .cat-nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.l-rightbar ul,
+.l-rightbar li {
+  margin: 0;
+  padding: 0;
+}
+.l-rightbar .cat-nav__item {
+  margin-bottom: 20px;
+}
+.l-rightbar .cat-nav__link {
+  position: relative;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-primary-def);
+  font-size: 12px;
+  font-weight: 400;
+  padding: 18px 5px;
+  line-height: 1.2;
+  transition: all 0.3s ease-out;
+}

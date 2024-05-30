@@ -1,0 +1,103 @@
+<!-- Modal -->
+<div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content h-100">
+      <div class="h-100 modal-body p-0">
+        <div class="h-100 row g-0">
+          <div class="h-100 col-lg-6 d-lg-block d-none">
+            <div class="v-card">
+              <img src="https://ifrd.4rabet4.com/img/registration-modal-HI-IPL.webp?v=1" class="modal__content-item-img"
+                alt="" />
+              <div class="modal__content-block">
+                <h3 class="mb-2 modal__content-title">Sign up</h3>
+                <p class="mb-9 modal__content-text">
+                  On the best innovate sportsbook and casino
+                </p>
+                <div class="modal__content-logo-wrapper">
+                  <img src="https://ifrd.4rabet4.com/img/logo-bg-black.svg" width="147" height="38"
+                    class="modal__content-img" />
+                  <img src="https://ifrd.4rabet4.com/img/svgflags/HI.svg" class="modal__content-logo-country" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="v-card right-form">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+              <div class="gift gift--margin mb-4 title">
+                <div class="gift__container">
+                  <div class="gift__img-box">
+                    <div aria-label="" class="v-image v-responsive gift__img lazyloaded theme--dark">
+                      <div class="v-responsive__sizer" style="padding-bottom: 113.846%"></div>
+                      <div class="v-image__image v-image__image--cover" style="
+                          background-image: url('https://ifrd.4rabet4.com/img/gifs/gift.png');
+                          background-position: center center;
+                        "></div>
+                      <div class="v-responsive__content" style="width: 65px"></div>
+                    </div>
+                  </div>
+                  <p class="gift__title mb-0">5000 INR ON FIRST DEPOSIT</p>
+                </div>
+              </div>
+              <form [formGroup]="Register" (ngSubmit)="onSubmit()" novalidate>
+                <!-- <form> -->
+                <div class="form-group" style="display: none;">
+                  <input type="email" placeholder="Email" class="form-control" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" arequired />
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['emails'].errors }" arequired />
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Phone Number" id="mobilenumber" (change)="valid()" class="form-control"
+                    formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Username" class="form-control" formControlName="username"
+                    [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" required />
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control"
+                    formControlName="password" #passwordInput
+                    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" required />
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="C-Password" class="form-control" formControlName="confirmpassword"
+                    [ngClass]="{ 'is-invalid': submitted && f['confirmpassword'].errors }" required />
+                </div>
+
+                <div class="form-group" style="display: none;">
+                  <input type="text" placeholder="name" class="form-control" formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" arequired />
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary w-100">Sign up</button>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="agreement" />
+                  <label class="form-check-label" for="agreement">
+                    <span class="checkbox-terms">
+                      I confirm all the
+                      <a routerLink="/" class="text-white">
+                        Terms of user agreement
+                      </a>
+                      and that I am over 18
+                    </span>
+                  </label>
+                </div>
+              </form>
+              <div class="d-flex justify-content-center mt-4">
+                <div class="hint pr-1">Already registered?</div>
+                <a routerLink="/" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signin"
+                  class="link text-white">Sign in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

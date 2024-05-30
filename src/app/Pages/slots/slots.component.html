@@ -1,0 +1,52 @@
+<div class="slots">
+  <div class="min-wrapper">
+    <app-casino-leftaside></app-casino-leftaside>
+    <div class="content-wrapper">
+      <div class="page-title d-lg-flex d-none">
+        <h3 class="d-flex mb-0 align-items-center gap-2">
+          <span class="material-symbols-outlined fs-2"> poker_chip </span>
+          Slots
+        </h3>
+      </div>
+      <div class="group-slots pt-4">
+        <div class="slots">
+          <!-- card row start here -->
+          <div class="row custom-row">
+            <!-- card col start here -->
+            <div class="col-md-3 col-6" *ngFor="let item of getSlots">
+              <div class="slots__item mb-md-4 mb-2 me-0">
+                <div class="case">
+                  <img [src]="item.Image" alt="" />
+                  <div
+                    class="case__container"
+                    [routerLink]="[
+                      '/casino-page',
+                      {
+                        game_id: item.game_id,
+                        provider_name: item.provider_name
+                      }
+                    ]"
+                    (click)="
+                      getgamesid(
+                        item.game_id,
+                        item.provider_name,
+                        item.category
+                      )
+                    "
+                  >
+                    <button type="button" class="case-btn">Play</button>
+                  </div>
+                </div>
+                <p class="case__name mb-0">{{ item.game_name }}</p>
+              </div>
+            </div>
+            <!-- card col end here -->
+          </div>
+          <!-- card row end here -->
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+    <app-rightaside></app-rightaside>
+  </div>
+</div>

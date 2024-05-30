@@ -1,0 +1,46 @@
+  <div class="min-wrapper">
+    <app-casino-leftaside></app-casino-leftaside>
+    <div class="content-wrapper">
+      <div class="page-title d-lg-flex d-none">
+        <h3 class="d-flex mb-0 align-items-center gap-2">
+          <span class="material-symbols-outlined fs-2"> poker_chip </span>
+          Casino
+        </h3>
+      </div>
+      <app-casino-slider></app-casino-slider>
+      <div class="casino-search">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">
+            <span class="material-symbols-outlined"> search </span>
+          </span>
+          <input type="text" class="form-control" placeholder="Search..." />
+        </div>
+      </div>
+      <div class="group-slots">
+        <div class="slots">
+          <!-- card row start here -->
+          <div class="row">
+            <!-- card col start here -->
+            <div class="col-md-3" *ngFor="let item of allcatergroy">
+              <div class="slots__item mb-4 me-0">
+                <a [routerLink]="['/casino-page', { game_id: item.game_id, provider_name: item.provider_name }]"
+                  (click)="getgamesid(item.game_id, item.provider_name,item.category)">
+                  <div class="case">
+                    <img [src]="item.Image" alt="" />
+                    <div class="case__container">
+                      <button type="button" class="case-btn">Play</button>
+                    </div>
+                  </div>
+                </a>
+                <p class="case__name mb-0">{{item.game_name}}</p>
+              </div>
+            </div>
+            <!-- card col end here -->
+
+          </div>
+          <!-- card row end here -->
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>

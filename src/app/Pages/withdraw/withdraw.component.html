@@ -1,0 +1,165 @@
+<div class="min-wrapper">
+  <app-profile-sidebar></app-profile-sidebar>
+  <div class="content-wrapper">
+    <div class="page-title d-lg-flex d-none">
+      <h3 class="d-flex mb-0 align-items-center gap-2">
+        <span class="material-symbols-outlined fs-2"> payments </span>
+        Withdraw
+      </h3>
+    </div>
+    <div class="group-slots pt-4">
+      <div class="row">
+        <div class="col-md-5 order-md-1 order-2 mt-md-0 mt-3">
+          <ul class="text-white">
+            <li>
+              <span class="material-symbols-outlined"> east </span>
+              The bonus amount can be used to place bets across the platform and
+              the winnings can be withdrawn.
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> east </span>
+              A player can use bonus amount to place bets and play games on
+              Kheloyar.
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> east </span>
+              If the withdrawals are pending from the bank, it may take upto 72
+              banking hours for your transaction to clear.
+            </li>
+            <li class="mb-0">
+              <span class="material-symbols-outlined"> east </span>
+              If a user only deposits and attempts to withdraw the money without
+              placing a single bet, 100% of the amount will be withheld due to
+              suspicious activity. If this is repeated, no withdrawal will be
+              given to the user.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-7 order-md-2 order-1">
+          <form class="withdraw-form">
+            <label for="PaymentOption">Payment Options</label>
+            <div class="input-group mb-3">
+              <select id="PaymentOption" class="form-control form-select">
+                <option value="IMPS">Bank</option>
+                <option value="GP">GPay</option>
+                <option value="PP">Phonepe</option>
+              </select>
+            </div>
+            <label for="holdername">Holder Name</label>
+            <div class="input-group mb-3">
+              <input
+                id="holdername"
+                type="text"
+                class="form-control"
+                placeholder="Holder Name"
+                value=""
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-sm-8">
+                <label for="bankname">Bank Name</label>
+                <div class="input-group mb-3">
+                  <input
+                    id="bankname"
+                    type="text"
+                    class="form-control"
+                    placeholder="Bank Name"
+                    maxlength="{20}"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <label for="accountNo">Account No</label>
+            <div class="input-group mb-3">
+              <input
+                id="accountNo"
+                type="number"
+                class="form-control"
+                placeholder="Account No"
+                value=""
+              />
+            </div>
+            <label for="ibnifsccode">IBAN/IFSC Number</label>
+            <div class="input-group mb-3">
+              <input
+                id="ibnifsccode"
+                type="text"
+                class="form-control"
+                placeholder="IBAN/IFSC Number"
+                value=""
+              />
+            </div>
+            <label for="accountNo">Account Type</label>
+            <div class="input-group mb-3">
+              <div class="form-check me-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="account_type"
+                  id="savings"
+                  value="option1"
+                  checked
+                />
+                <label class="form-check-label" for="savings"> Savings </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="account_type"
+                  id="current"
+                  value="option2"
+                />
+                <label class="form-check-label" for="current"> Current </label>
+              </div>
+            </div>
+            <label for="accountNo">Request Method</label>
+            <div class="input-group mb-3">
+              <div class="form-check me-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="account_w"
+                  id="normal"
+                  value="Normal"
+                  checked
+                />
+                <label class="form-check-label" for="normal"> Normal </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="account_w"
+                  id="Fast"
+                  value="Fast"
+                />
+                <label class="form-check-label" for="Fast"> Fast </label>
+              </div>
+            </div>
+            <label for="accountNo">Amount</label>
+            <div class="input-group mb-3">
+              <input
+                id="accountNo"
+                type="number"
+                class="form-control"
+                placeholder="Account No"
+                value=""
+              />
+            </div>
+            <div class="add-account-btn mt-2">
+              <div class="d-flex m-auto w-md-50">
+                <button type="submit" class="btn btn-primary w-100">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <app-rightaside></app-rightaside>
+</div>

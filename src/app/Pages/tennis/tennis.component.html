@@ -1,0 +1,104 @@
+<div class="games-page">
+  <div class="min-wrapper">
+    <div class="content-wrapper ps-0 border-0">
+      <!-- page title start -->
+      <div class="page-title d-lg-flex d-none">
+        <h3>
+          <div class="d-flex align-items-center gap-1">
+            <span class="material-symbols-outlined fs-2"> view_cozy </span>
+            SPORTS
+          </div>
+          <small>Choose from over 1000 teams available every day!</small>
+        </h3>
+        <div class="preview__slider">
+          <swiper-container autoplay="true" delay="1000">
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/231488/EN_Upper_Lott.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/223285/EN_Upper.png" class="img-fluid rounded" alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/233027/15.05_Upper_IPL.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/231369/EN_Upper_IPL24.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+      <!-- page title end -->
+      <div class="inplay">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 pe-md-0">
+            <!-- left aside -->
+            <app-leftaside></app-leftaside>
+          </div>
+          <div class="col-lg-9 col-md-8 ps-md-0">
+            <div class="px-md-3 px-2 pt-3 pb-2">
+              <!-- popular label -->
+              <h4 class="text-white pt-lg-3 mb-2 fw-bold d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-light fs-4">
+                  sports_tennis
+                </span>
+                Tennis
+              </h4>
+            </div>
+            <div class="inplay-wrapper">
+              <div class="bet-table-body">
+                <!-- games card start -->
+                <div class="bet-table-box" *ngFor="let item of gettenis;let i = index">
+                  <div class="bet-table-row row">
+                    <div class="col-md-5 px-md-3 px-0">
+                      <div class="game-title">
+                        <div class="game-name d-inline-block">
+                          <a routerLink="/game-details">
+                            <small class="date">{{ StartDates[i] }}</small>
+                            <p class="team-name text-left">
+                              {{item.name}}
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 pe-0 ps-md-auto ps-0 d-flex justify-content-end">
+                      <div class="point-title">
+                        <div class="back bl-box" *ngFor="let data of combinedDataBack"  (click)="getmarket(item.market_id,item.match_id,item.sport_id,data.id,data.available.price)">
+                          <span class="d-block odds"> {{data.available.price}}</span>
+                          <small>{{data.available.size}}</small>
+                        </div>
+
+                      </div>
+                      <div class="point-title">
+                        <div class="lay bl-box" *ngFor="let data of combinedData"  (click)="getmarket(item.market_id,item.match_id,item.sport_id,data.id,data.available.price)">
+                          <span class="d-block odds ">{{data.available.price}}</span>
+                          <small>{{data.available.size}}</small>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- games card end -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+    <app-rightaside></app-rightaside>
+  </div>
+</div>

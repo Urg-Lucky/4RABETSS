@@ -1,0 +1,61 @@
+<div class="min-wrapper">
+  <app-profile-sidebar></app-profile-sidebar>
+  <div class="content-wrapper">
+    <div class="page-title d-lg-flex d-none">
+      <h3 class="d-flex mb-0 align-items-center gap-2">
+        <span class="material-symbols-outlined fs-2">
+          account_balance_wallet
+        </span>
+        Account Statement
+      </h3>
+    </div>
+    <div class="group-slots pt-4">
+      <form [formGroup]="Report" novalidate class="filter-form g-3 row mb-3">
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="input-group">
+            <input type="date" class="form-control" formControlName="from_date" [(ngModel)]="selectcurrentdate" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="input-group">
+            <input type="date" class="form-control" formControlName="to_date" [(ngModel)]="selectlastdate" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 btn-box">
+          <button type="submit" class="btn btn-primary" (click)="fetchReport()">Load Report</button>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr>
+              <th width="160px">Date</th>
+              <th width="150px">Credit</th>
+              <th width="150px">Debit</th>
+              <th width="150px">Balace</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of Reports;let i = index">
+              <td class="text-nowrap">{{ createdDates[i] }}</td>
+              <td><span class="fw-medium text-success" *ngIf="row.amount > 0">{{row.amount}}</span></td>
+              <td><span class="fw-medium text-danger" *ngIf="row.amount <= 0">{{row.amount}}</span></td>
+              <td><span class="fw-medium text-success">{{row.available_balance}}</span></td>
+              <td>
+                <a routerLink="/account-statement"><span class="btn-link">{{row.description}}</span></a>
+              </td>
+            </tr>
+
+            <!-- if data is not -->
+            <!-- <tr class="data-not-found">
+                <td colspan="5" class="text-center">Not Found</td>
+              </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <app-rightaside></app-rightaside>
+</div>

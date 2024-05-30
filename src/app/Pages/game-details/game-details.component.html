@@ -1,0 +1,154 @@
+<main class="wrapper games-page">
+  <div class="min-wrapper">
+    <div class="content-wrapper ps-0 border-0">
+      <!-- page title start -->
+      <div class="page-title d-lg-flex d-none">
+        <h3>
+          <div class="d-flex align-items-center gap-1">
+            <span class="material-symbols-outlined fs-2"> view_cozy </span>
+            SPORTS
+          </div>
+          <small>Choose from over 1000 teams available every day!</small>
+        </h3>
+        <div class="preview__slider">
+          <swiper-container autoplay="true" delay="1000">
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/231488/EN_Upper_Lott.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/223285/EN_Upper.png" class="img-fluid rounded" alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/233027/15.05_Upper_IPL.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+            <swiper-slide>
+              <a class="rounded" routerLink="/game-details">
+                <img src="https://upload.4rabet4.com/storage/231369/EN_Upper_IPL24.png" class="img-fluid rounded"
+                  alt="" />
+              </a>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+      <!-- page title end -->
+      <div class="inplay">
+        <div class="row">
+          <div class="col-lg-3 d-lg-block d-none pe-0">
+            <!-- left aside -->
+            <app-leftaside></app-leftaside>
+          </div>
+          <div class="col-lg-6 col-md-8 px-0">
+            <div class="middle-content">
+              <div class="px-3 pt-2 pb-2">
+                <!-- popular label -->
+                <h4 class="text-white pt-3 mb-2 fw-bold d-flex align-items-center gap-2">
+                  <span class="material-symbols-outlined text-light fs-4">
+                    sports_cricket
+                  </span>
+                  Match Odds
+                </h4>
+              </div>
+              <div class="inplay-wrapper">
+                <div class="bet-table-body">
+
+
+                  <!-- games card start -->
+                  <div class="bet-table-box" *ngFor="let item of getCricket; let i = index">
+                    <div class="bet-table-row row">
+                      <div class="col-md-5 px-md-3 px-0">
+                        <div class="game-title">
+                          <div class="game-name d-inline-block">
+                            <a>
+                              <small class="date">{{ startDates[i] }}</small>
+                              <p class="team-name text-left">
+                                {{item.selectionName}}
+                              </p>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-7 pe-0 ps-md-auto ps-0 d-flex justify-content-end">
+
+                        <div class="point-title" routerLink="/game-details">
+                          <div class="back bl-box" *ngFor="let data of combinedDataBack"
+                            (click)="gamedetils(item.selectionName,data.available.price)">
+                            <span class="d-block odds">{{
+                              data.available.price }}</span>
+                            <small>{{ data.available.size }}</small>
+                          </div>
+
+
+                        </div>
+                        <div class="point-title" routerLink="/game-details">
+                          <div class="lay bl-box" *ngFor="let data of combinedData"
+                            (click)="gamedetils(item.selectionName,data.available.price)">
+                            <span class="d-block odds">{{
+                              data.available.price }}</span>
+                            <small>{{ data.available.size }}</small>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- games card end -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-sidebar col-lg-3 col-md-4" [ngClass]="{ active: isActive }">
+            <div class="right-sidebar-top">
+              <button class="btn-arrow d-md-none d-flex" (click)="toggleSidebar()">
+                <span class="material-symbols-outlined"> arrow_right </span>
+              </button>
+              <p>BETSLIP</p>
+            </div>
+            <form class="h-100" [formGroup]="GameDatils" novalidate>
+              <div class="bet-card">
+                <span class="material-symbols-outlined close-btn"> close </span>
+                <p class="game-name">{{this.Name}}</p>
+                <div class="bet-select">
+                  <span class="selected-option">{{this.Price}}</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="stack" /><span
+                      class="material-symbols-outlined">
+                      currency_rupee
+                    </span>
+                  </div>
+                </div>
+                <div class="betslip-stakebtns">
+                  <button class="button-stake" id="stakeButton" (click)="Priceadd()">500</button>
+                  <button class="button-stake" id="stakeButton1" (click)="PriceaddTwo()">1000</button>
+                  <button class="button-stake" id="stakeButton2" (click)="PriceaddThree()">5000</button>
+                  <button class="button-stake" id="stakeButton3" (click)="Priceaddfour()">10000</button>
+                  <button class="button-stake" id="stakeButton4" (click)="Priceaddfive()">50000</button>
+                </div>
+                <div class="betslip-stakebtns">
+                  <button class="btn-cancel" (click)="clearBet()">Cancel</button>
+                  <button class="btn-bet" (click)="onSubmit()">Bet</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <button class="bet-btn" (click)="toggleSidebar()">
+        <span class="badge-round"> 0 </span>
+        <span class="material-symbols-outlined"> receipt_long </span>
+      </button>
+      <app-footer></app-footer>
+    </div>
+    <app-rightaside></app-rightaside>
+  </div>
+</main>

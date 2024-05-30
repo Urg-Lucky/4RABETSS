@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg py-0" aria-label="Offcanvas navbar large">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navToggle"
+      aria-controls="navToggle">
+      <span></span>
+    </button>
+    <a class="navbar-brand me-0" routerLink="/">
+      <img src="https://ifrd.4rabet4.com/img/logo.svg" width="173" />
+      <img src="https://ifrd.4rabet4.com/img/svgflags/HI.svg" class="In-flag" alt="" />
+    </a>
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="navToggle" aria-labelledby="navbar">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="navbar">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="drawer__block d-lg-none d-block">
+          <a class="btn btn-primary" data-bs-dismiss="offcanvas" routerLink="/deposit">Deposit</a>
+        </div>
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" routerLink="/"><span class="material-symbols-outlined">
+                action_key </span>Main</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" routerLinkActive="active" routerLink="/inplay"><span
+                class="material-symbols-outlined"> cast </span>Live</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" routerLinkActive="active" routerLink="/sports"><span
+                class="material-symbols-outlined"> sports_soccer </span>Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" routerLinkActive="active" routerLink="/casino"><span
+                class="material-symbols-outlined"> poker_chip </span>Casino</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/live-casino"><span
+                class="material-symbols-outlined"> casino </span> live
+              Casino</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-dismiss="offcanvas" routerLinkActive="active" routerLink="/slots"><span
+                class="material-symbols-outlined"> robot </span>Slots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/virtual-sports"><span
+                class="material-symbols-outlined">
+                head_mounted_device </span>Virtual Sports</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-dismiss="offcanvas"
+              routerLinkActive="active"
+              routerLink="/matka"
+              ><span class="material-symbols-outlined"> cards </span>Matka</a
+            >
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="apps d-lg-none gap-2" [ngClass]="{ 'd-none': this.value != '' && this.loginvalue != null }">
+      <a class="text-white fs-4" routerLink="/"><i class="bi bi-apple"></i></a>
+      <a class="text-white fs-4" routerLink="/"><i class="bi bi-android2"></i></a>
+    </div>
+    <div class="header__item d-lg-flex d-none" *ngIf="this.value == '' || this.loginvalue == null">
+      <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#signin">
+        Sign in
+      </button>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signup">
+        Registration
+      </button>
+    </div>
+    <div class="header__item" *ngIf="this.value != '' && this.loginvalue != null">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-symbols-outlined"> person </span>
+          <span class="username">{{ this.uservalue }}</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="/account-statement">Account Statement</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/profit-loss">Profit and Loss</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/bet-history">Sport Bet History</a>
+          </li>
+          <li><a class="dropdown-item" routerLink="/deposit">Deposit</a></li>
+          <li><a class="dropdown-item" routerLink="/withdraw">Withdraw</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="/" data-bs-toggle="modal" data-bs-target="#changePassword">Change
+              Password</a>
+          </li>
+          <li>
+            <a class="dropdown-item border-top pt-3" (click)="this.logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__item d-lg-flex d-none">
+      <button class="flags">
+        <img src="https://ifrd.4rabet4.com/img/svgflags/HI.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="log-reg d-lg-none px-md-5 px-2 w-100" *ngIf="this.value == '' || this.loginvalue == null">
+  <div class="d-flex w-100 gap-2 px-sm-5">
+    <button class="btn rounded btn-primary w-50" data-bs-toggle="modal" data-bs-target="#signin">
+      Sign in
+    </button>
+    <button class="btn rounded btn-success w-50" data-bs-toggle="modal" data-bs-target="#signup">
+      Registration
+    </button>
+  </div>
+</div>

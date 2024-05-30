@@ -1,0 +1,63 @@
+<!-- Modal -->
+<div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content h-100">
+      <div class="h-100 modal-body p-0">
+        <div class="h-100 row g-0">
+          <div class="h-100 col-lg-6 d-lg-block d-none">
+            <div class="v-card">
+              <img src="https://ifrd.4rabet4.com/img/registration-modal-HI-IPL.webp?v=1" class="modal__content-item-img"
+                alt="" />
+              <div class="modal__content-block">
+                <h3 class="mb-2 modal__content-title">WELCOME BACK!</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="v-card right-form">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <form class="h-100" [formGroup]="loginfrom" (ngSubmit)="LoginFroms()" novalidate>
+                <!-- <form class="h-100"> -->
+                <div class="d-flex justify-content-between h-100 flex-column">
+                  <div>
+                    <div class="form-group">
+                      <h4 class="text-white fw-bold text-center mb-3">LOGIN</h4>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="Username" class="form-control" formControlName="user_name" />
+                    </div>
+                    <div class="form-group">
+                      <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" class="form-control"
+                        formControlName="password" />
+
+                      <i alt="show" class="bi bi-eye p-show" (click)="showPassword = !showPassword"
+                        [class.hide]="showPassword"></i>
+                      <i alt="hide" class="bi bi-eye-slash p-show" (click)="showPassword = !showPassword"
+                        [class.hide]="!showPassword"></i>
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                      <div class="hint pr-1">Don’t remember?</div>
+                      <a routerLink="/" class="link text-white">
+                        Recover a password</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex flex-column align-items-center mt-4 mb-3">
+                      <div class="hint pr-1">Don't have an account?</div>
+                      <a routerLink="/" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signup"
+                        class="link text-white ms-0">
+                        Sign Up</a>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-primary w-100">Sign In</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
